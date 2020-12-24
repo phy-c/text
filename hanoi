@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int i = 1;
+void move(int n, char A, char C)
+{
+	printf("第%d次是移动第%d个从%c------->%c\n", i++, n,A,C);
+}
+void hanluo(int n, char one, char two, char three)
+{
+	if (n == 1)
+	{
+		move(n,one, three);
+	}
+	else
+	{
+		hanluo(n - 1, one, three, two);
+		move(n , one, three);
+		hanluo(n - 1, two, three, one);
+	}
+}
+int main()
+{
+	int n = 0;
+	printf("请输入n=");
+	scanf("%d", &n);
+	hanluo(n, 'A','B','C');
+	return 0;
+}
