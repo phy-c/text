@@ -1,0 +1,28 @@
+#include<stdio.h>
+void math(int i)
+{
+  int a,b,c,n;
+  a=i%10;
+  b=(i/10)%10;
+  c=i%100;
+  if(i==a*a*a+b*b*b+c*c*c)
+    {
+      while(i>=1)
+      {
+        n=i%10;
+        i=i/10;
+        printf("%d",n);
+      }
+      printf("\n");
+     }
+ }
+      
+int main()
+{
+ int i;
+ for(i=100；i<1000;i++)
+   {
+     math(i);
+   }
+   return 0;
+}
